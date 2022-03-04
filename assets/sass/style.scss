@@ -1,0 +1,492 @@
+@import "fonts";
+// colors
+$color-white: white;
+$color-black: black;
+$color-blue-100: #132e55;
+$color-blue-400: #3a75cd;
+$color-blue-800: #4583df;
+$color-gray-100: #f7f8fb;
+$color-gray-400: #e9e9e9;
+$color-gray-500: #d6d8de;
+$color-yellow-500: #f9d548;
+// fonts
+$font-regular: "tbc-regular";
+$font-black: "tbc-black";
+$font-bold: "tbc-bold";
+// buttons
+.btn {
+  font-size: 14px;
+  font-family: $font-bold;
+  transition: all 0.5s;
+  outline: none;
+}
+.yellow_button {
+  background-color: $color-yellow-500;
+  color: $color-blue-100;
+  border-radius: 68px;
+  &:hover {
+    background-color: $color-blue-100;
+    color: $color-white;
+  }
+}
+.blue_button {
+  background-color: $color-white;
+  color: $color-blue-100;
+  border-radius: 68px;
+  border: 1px solid $color-blue-100;
+  &:hover {
+    background-color: $color-blue-100;
+    color: $color-white;
+  }
+}
+.white_button {
+  background-color: transparent;
+  color: $color-white;
+  border-radius: 68px;
+  border: 1px solid $color-white;
+  &:hover {
+    background-color: $color-blue-100;
+    color: $color-white;
+    border: 1px solid transparent;
+  }
+}
+// inputs
+.custom_input {
+  width: 100%;
+  height: 65px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid $color-gray-500;
+  border-radius: 12px;
+  font-size: 14px;
+  input {
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    &:not(:placeholder-shown),
+    &:focus {
+      + label {
+        font-size: 10px;
+        color: $color-blue-800;
+        font-family: $font-bold;
+        top: 11px;
+      }
+    }
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      opacity: 0; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      opacity: 0;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      opacity: 0;
+    }
+  }
+  .input_label {
+    position: absolute;
+    top: 19px;
+    margin-bottom: 0;
+    left: 16px;
+    font-size: 14px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  &:focus {
+    border: 1px solid $color-blue-100;
+  }
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+// upload
+.upload_photo {
+  height: 87px;
+  margin-bottom: 35px;
+  padding: 20px 27px;
+  border: dashed 1px $color-gray-500;
+  border-radius: 10px;
+  button {
+    width: 48px;
+    height: 48px;
+    margin-right: 47px;
+    border: 2px solid $color-gray-500;
+    background-color: $color-gray-100;
+    img {
+      width: 11px;
+      height: 11px;
+    }
+    span {
+      font-size: 14px;
+    }
+  }
+}
+// checkbox
+.custom_checkbox {
+  margin-bottom: 24px;
+  .checkbox {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+    border: 1px solid $color-gray-500;
+    span {
+      display: none;
+    }
+  }
+  input {
+    &:checked {
+      + .checkbox {
+        span {
+          display: block;
+          width: 14px;
+          height: 14px;
+          background-color: $color-blue-400;
+        }
+      }
+    }
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #26262a;
+}
+img {
+  max-width: 100%;
+}
+body {
+  overflow-x: hidden;
+  font-family: $font-regular;
+  &.active {
+    padding-right: 17px;
+    overflow: hidden;
+    background-color: $color-gray-400;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(19, 46, 85, 0.8);
+    }
+  }
+}
+
+.custom_container {
+  max-width: 1376px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+// header
+header {
+  height: 90px;
+  background-color: $color-white;
+  .lang {
+    margin: 0 -15px;
+    li {
+      padding: 0 15px;
+      a {
+        text-decoration: none;
+        color: $color-blue-100;
+        font-size: 16px;
+        &.active {
+          font-family: $font-black;
+        }
+      }
+    }
+  }
+}
+// find shetler
+.main {
+  padding-bottom: 100px;
+  background-color: $color-gray-400;
+  .find_shetler {
+    padding: 75px 15px 90px;
+    .text {
+      h1 {
+        font-size: 144px;
+        font-family: $font-black;
+        color: $color-blue-100;
+        line-height: 140px;
+      }
+      p {
+        max-width: 415px;
+        margin-bottom: 60px;
+        font-size: 18px;
+        color: $color-blue-100;
+      }
+      .buttons {
+        .btn {
+          height: 48px;
+          padding: 0 72px;
+          &:first-child {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+    .photo {
+      figure {
+        img {
+          width: 100%;
+          height: 580px;
+          object-fit: cover;
+        }
+      }
+      .swiper-container {
+        .swiper-wrapper {
+          .swiper-slide {
+            height: 40px;
+            background-color: $color-blue-100;
+            color: $color-white;
+            font-size: 12px;
+            font-family: $font-bold;
+            line-height: 40px;
+            &.yellow {
+              background-color: $color-yellow-500;
+              color: $color-blue-100;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// mid buttons
+.bottom_buttons {
+  padding: 32px 0;
+  background-color: $color-blue-400;
+  .btn {
+    height: 48px;
+    padding: 0 100px;
+    &:first-child {
+      margin-right: 20px;
+    }
+  }
+}
+// cards
+.cards {
+  padding: 64px 0 100px;
+  .cards_row {
+    margin: 0 -8px;
+    .user_card {
+      width: 25%;
+      margin-bottom: 32px;
+      padding: 0 8px;
+      .card_inner {
+        padding: 20px 12px;
+        background-color: $color-white;
+        border-radius: 16px;
+        figure {
+          margin-bottom: 25px;
+          img {
+            width: 100%;
+            height: 177px;
+            border-radius: 16px;
+            object-fit: cover;
+          }
+          .card_icon {
+            top: 20px;
+            left: 18px;
+            z-index: 5;
+            width: 45px;
+            height: 45px;
+            background-color: $color-white;
+            img {
+              width: 25px;
+              height: 19px;
+              margin-right: 0;
+            }
+          }
+        }
+        span {
+          margin-bottom: 14px;
+          font-size: 14px;
+          img {
+            margin-right: 10px;
+          }
+          &.title {
+            font-size: 18px;
+            font-family: $font-bold;
+          }
+        }
+        .btn {
+          height: 48px;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
+// about
+.about {
+  margin-top: 100px;
+  h1 {
+    font-size: 288px;
+    line-height: 74px;
+    -webkit-text-stroke: 1px #132e55;
+    color: $color-gray-400;
+    font-family: $font-black;
+  }
+  .about_wrap {
+    .about_img {
+      margin-top: 20px;
+      figure {
+        max-width: 448px;
+        img {
+          width: 100%;
+          height: 590px;
+          object-fit: cover;
+          box-shadow: 0 -10px 50px 0 rgba(0, 0, 0, 0.4);
+        }
+      }
+      .times {
+        span {
+          color: $color-blue-100;
+          font-size: 14px;
+          font-family: $font-bold;
+        }
+        .line {
+          height: 1px;
+          margin-top: 10px;
+          background-color: $color-blue-100;
+        }
+      }
+    }
+  }
+  .bottom_text {
+    margin-top: 40px;
+    p {
+      max-width: 920px;
+      color: $color-blue-100;
+      font-size: 36px;
+      line-height: 2.06;
+    }
+  }
+}
+
+// left_bars
+.left_bars {
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 480px;
+  height: 100vh;
+  padding: 61px 32px;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+  background-color: $color-white;
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .close_bars {
+    top: 55px;
+    right: -25px;
+    width: 44px;
+    height: 44px;
+    background-color: $color-yellow-500;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  h1 {
+    margin-bottom: 61px;
+    font-size: 24px;
+    font-family: $font-black;
+  }
+  .counts {
+    margin-bottom: 20px;
+    span {
+      &.title {
+        font-size: 14px;
+        font-family: $font-bold;
+      }
+    }
+    .number {
+      margin: 0 16px;
+      font-size: 16px;
+      font-family: $font-bold;
+    }
+    button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid $color-gray-500;
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  .yellow_button {
+    height: 48px;
+    padding: 0 65px;
+    margin-top: 40px;
+    font-family: $font-black;
+  }
+  &.detail_page {
+    .user_card {
+      padding: 20px 12px;
+      background-color: $color-white;
+      border-radius: 16px;
+      figure {
+        margin-bottom: 25px;
+        img {
+          width: 100%;
+          height: 177px;
+          border-radius: 16px;
+          object-fit: cover;
+        }
+        .card_icon {
+          top: 20px;
+          left: 18px;
+          z-index: 5;
+          width: 45px;
+          height: 45px;
+          background-color: $color-white;
+          img {
+            width: 25px;
+            height: 19px;
+            margin-right: 0;
+          }
+        }
+      }
+      span {
+        margin-bottom: 14px;
+        font-size: 14px;
+        img {
+          margin-right: 10px;
+        }
+        &.title {
+          font-size: 18px;
+          font-family: $font-bold;
+        }
+      }
+      .btn {
+        height: 48px;
+        margin-top: 10px;
+      }
+      .line {
+        margin: 35px 0;
+        height: 1px;
+        border: solid 1px $color-gray-500;
+      }
+    }
+    .yellow_button {
+      margin-top: 27px;
+    }
+  }
+}
